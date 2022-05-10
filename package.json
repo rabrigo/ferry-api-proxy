@@ -1,0 +1,25 @@
+{
+  "name": "ferry-api-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabrigo/ferry-api-proxy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rabrigo/ferry-api-proxy/issues"
+  },
+  "homepage": "https://github.com/rabrigo/ferry-api-proxy#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "node-fetch": "^3.2.4",
+    "path": "^0.12.7"
+  }
+}
