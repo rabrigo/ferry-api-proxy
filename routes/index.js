@@ -8,7 +8,6 @@ app.get('/:date/:departing/:arriving', (req, res) => {
     fetch(`${ferryBaseURL}/${req.params.date}/${req.params.departing}/${req.params.arriving}?apiaccesscode=${apiKey}`)
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
         res.send(data);
     });
 });
