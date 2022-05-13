@@ -10,12 +10,13 @@ fetch(`/api/${date}/4/7`)
 .then(response => response.json())
 .then(data => {
     // console.log(data);
-    console.log(data.TerminalCombos[0].Times);
+    // console.log(data.TerminalCombos[0].Times);
     for (let i = 0; i < data.TerminalCombos[0].Times.length; i++) {
         const arrString = data.TerminalCombos[0].Times[i].DepartingTime;
         // console.log(arrString);
         const replString = arrString.replaceAll(/[^-0-9]+/g, '');
-        const ferryTime = new Date(parseInt(replString));
-        console.log(`ferry time: ${ferryTime.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'})}`);
+        const parseString = new Date(parseInt(replString));
+        const ferryTime = parseString.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        console.log(`ferry time: ${ferryTime}`);
     }
 });
