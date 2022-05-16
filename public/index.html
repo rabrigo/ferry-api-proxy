@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1 id="main-header">Scheduled ferry times</h1>
+    <label for="ferry-terminals">Ferry schedule for: </label>
+    <select name="ferry-terminals" id="ferry-terminals">
+        <option selected disabled hidden>Please choose an option</option>
+        <option value="4-7">Bremerton to Seattle</option>
+        <option value="7-4">Seattle to Bremerton</option>
+    </select>
     <ul id="ferry-times"></ul>
     <script src="./main.js"></script>
 </body>
