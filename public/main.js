@@ -15,9 +15,24 @@ let timePassed = false;
 // add event listener for drop down list
 // if certain values are selected then departing and arrival terminals
 // are changed in the fetch request
+const terminalsList = document.getElementById('terminals-list');
+terminalsList.addEventListener('change', function() {
+    renderSchedule(this.value);
+});
 
-function fetchFerries() {
-    fetch(`/api/${dateParam}/4/7`)
+function renderSchedule(terminals) {
+    switch(terminals) {
+        case '4-7':
+            fetchFerries(4, 7);
+            break;
+        case '7-4':
+            fetchFerries(7, 4);
+            break;
+    }
+}
+
+function fetchFerries(departingID, arrivingID) {
+    fetch(`/api/${dateParam}/${departingID}/${arrivingID}`)
     .then(response => response.json())
     .then(data => {
         const message = `Departing from ${data.TerminalCombos[0].DepartingTerminalName}, arriving in ${data.TerminalCombos[0].ArrivingTerminalName} <br> for ${rightNow}`;
