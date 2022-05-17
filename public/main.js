@@ -6,27 +6,47 @@ const dateParam = year + '-' + month + '-' + day;
 let departParam;
 let arrivalParam;
 
-// console.log(`The current date is ${dateParam}`);
+console.log(`The current date is ${dateParam}`);
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
 
-// global variable to check if a scheduled time has passed
+// global variable to check if a scheduled sailing has passed
 let timePassed = false;
 
-// add event listener for drop down list
-// if certain values are selected then departing and arrival terminals
-// are changed in the fetch request
+// drop down selection
 const terminalsList = document.getElementById('terminals-list');
 terminalsList.addEventListener('change', function() {
     renderSchedule(this.value);
 });
 
+fetch(`/api/terminals/${dateParam}`)
+.then(response => response.json())
+.then(data => console.log(data));
+
 function renderSchedule(terminals) {
     switch(terminals) {
+        case '3-7':
+            fetchFerries(3, 7);
+            break;
         case '4-7':
             fetchFerries(4, 7);
             break;
+        case '8-12':
+            fetchFerries(8, 12);
+            break;
+        case '9-20':
+            fetchFerries(9, 20);
+            break;
+        case '12-8':
+            fetchFerries(9, 20);
+            break;
+        case '7-3':
+            fetchFerries(9, 20);
+            break;
         case '7-4':
-            fetchFerries(7, 4);
+            fetchFerries(9, 20);
+            break;
+        case '20-9':
+            fetchFerries(9, 20);
             break;
     }
 }
@@ -39,13 +59,14 @@ function fetchFerries(departingID, arrivingID) {
         printDate(message);
         console.log(data);
         // console.log(data.TerminalCombos[0].Times);
+        // reset #ferry-times
+        document.getElementById('ferry-times').innerHTML = '';
         for (let i = 0; i < data.TerminalCombos[0].Times.length; i++) {
             const arrString = data.TerminalCombos[0].Times[i].DepartingTime;
             // console.log(arrString);
             const replString = arrString.replaceAll(/[^-0-9]+/g, '');
             const unixString = new Date(parseInt(replString));
             const ferryTime = unixString.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-
             checkTime(unixString);
             addFerryTime(ferryTime);
         }
@@ -54,10 +75,10 @@ function fetchFerries(departingID, arrivingID) {
 
 function printDate(text) {
     // there's no insertAfter() function that I could find
-    const ferryTimes = document.getElementById('ferry-times');
-    const mainMsg = document.createElement('h2');
-    mainMsg.innerHTML = text;
-    ferryTimes.parentNode.insertBefore(mainMsg, ferryTimes);
+    // create tags in HTML and toggle hidden class on and off
+    // instead of creating element every time
+    const dateRender = document.getElementById('date-render');
+    dateRender.innerHTML = text;
 }
 
 function addFerryTime(time) {

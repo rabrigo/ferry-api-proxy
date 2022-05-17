@@ -10,4 +10,10 @@ app.get('/:date/:departing/:arriving', (req, res) => {
     .then(data => res.send(data));
 });
 
+app.get('/terminals/:date', (req, res) => {
+    fetch(`https://wsdot.wa.gov/ferries/api/schedule/rest/terminals/${req.params.date}?apiaccesscode=${apiKey}`)
+    .then(response => response.json())
+    .then(data => res.send(data));
+});
+
 module.exports = app;
