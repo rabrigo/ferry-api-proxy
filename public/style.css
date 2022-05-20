@@ -1,0 +1,10 @@
+* {
+    font-family: 'Open Sans', sans-serif;;
+}
+
+#center-display {
+    margin: 0 auto;
+    height: 100%;
+    width: 500px;
+    background-color: rgb(211, 211, 211);
+}

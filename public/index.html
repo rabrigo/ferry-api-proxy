@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Ferry Friend</title>
 </head>
 <body>
-    <h1 id="main-header">Scheduled ferry times</h1>
-    <label for="terminals-list">Ferry schedule for: </label>
-    <select name="terminals-list" id="terminals-list">
-        <option selected disabled hidden>Please choose an option</option>
-        <option value="3-7">Bainbridge to Seattle</option>
-        <option value="4-7">Bremerton to Seattle</option>
-        <option value="8-12">Edmonds to Kingston</option>
-        <option value="9-20">Fauntleroy to Southworth</option>
-        <option value="12-8">Kingston to Edmonds</option>
-        <option value="7-3">Seattle to Bainbridge</option>
-        <option value="7-4">Seattle to Bremerton</option>
-        <option value="20-9">Southworth to Fauntleroy</option>
-    </select>
-    <h2 id="date-render"></h2>
-    <ul id="ferry-times"></ul>
+    <section id="center-display">
+        <h1 id="main-header">Scheduled ferry times</h1>
+        <label for="terminals-list">Ferry schedule for: </label>
+        <select name="terminals-list" id="terminals-list">
+            <option selected disabled hidden>Please choose an option</option>
+            <option value="3-7">Bainbridge to Seattle</option>
+            <option value="4-7">Bremerton to Seattle</option>
+            <option value="8-12">Edmonds to Kingston</option>
+            <option value="9-20">Fauntleroy to Southworth</option>
+            <option value="12-8">Kingston to Edmonds</option>
+            <option value="7-3">Seattle to Bainbridge</option>
+            <option value="7-4">Seattle to Bremerton</option>
+            <option value="20-9">Southworth to Fauntleroy</option>
+        </select>
+        <h2 id="date-render"></h2>
+        <ul id="ferry-times"></ul>
+    </section>
     <script src="./main.js"></script>
 </body>
 </html>
