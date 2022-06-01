@@ -19,6 +19,12 @@ terminalsList.addEventListener('change', function() {
     renderSchedule(this.value);
 });
 
+// date picker
+const datePicker = document.getElementById('date-picker');
+datePicker.addEventListener('change', function() {
+    console.log(this.value);
+});
+
 // terminal ID's:
 // fetch(`/api/terminals/${dateParam}`)
 // .then(response => response.json())
