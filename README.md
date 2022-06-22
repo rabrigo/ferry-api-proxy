@@ -12,7 +12,7 @@
 </details>
 
 ## Description
-Ferry Friend is an app that uses WSDOT's API for ferry schedules and presents it in an intuitive and mobile friendly interface.
+Ferry Friend is an app that uses WSDOT's API for ferry schedules and presents it in an intuitive and mobile friendly interface!
 
 ## Built With
 
