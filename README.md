@@ -1,5 +1,10 @@
 # Portfolio
 
+## Updates
+
+06-23-22
+Added a date picker, a dropdown menu for different terminal, and check time function only italicizes passed ferry sailings up to 2AM.
+
 <details>
 <summary>Table of Contents</summary>
   <ol>
@@ -12,7 +17,7 @@
 </details>
 
 ## Description
-Ferry Friend is an app that uses WSDOT's API for ferry schedules and presents it in an intuitive and mobile friendly interface!
+Ferry Friend is an app that integrates WSDOT's API for ferry schedules into an intuitive and mobile friendly interface.
 
 ## Built With
 

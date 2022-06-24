@@ -45,16 +45,16 @@ function renderSchedule(terminals) {
             fetchFerries(9, 20);
             break;
         case '12-8':
-            fetchFerries(9, 20);
+            fetchFerries(12, 8);
             break;
         case '7-3':
-            fetchFerries(9, 20);
+            fetchFerries(7, 3);
             break;
         case '7-4':
-            fetchFerries(9, 20);
+            fetchFerries(7, 4);
             break;
         case '20-9':
-            fetchFerries(9, 20);
+            fetchFerries(20, 9);
             break;
     }
 }
@@ -104,11 +104,11 @@ function addFerryTime(time) {
 }
 
 function checkTime(schedTime) {
-    // console.log(`schedTime.getHours(): ${schedTime.getHours()}`);
+    console.log(`schedTime.getHours(): ${schedTime.getHours()}`);
     // console.log(`schedTime.getMinutes(): ${schedTime.getMinutes()}`);
     // console.log(`rightNow.getHours(): ${rightNow.getHours()}`);
     // console.log(`rightNowgetMinutes(): ${rightNow.getMinutes()}`);
-    if ((rightNow.getHours() > schedTime.getHours()) || (rightNow.getHours() == schedTime.getHours() && rightNow.getMinutes() >= schedTime.getMinutes())) {
+    if ((schedTime.getHours() > 2) && ((rightNow.getHours() > schedTime.getHours()) || (rightNow.getHours() == schedTime.getHours() && rightNow.getMinutes() >= schedTime.getMinutes()))) {
         timePassed = true;
     }
 }
