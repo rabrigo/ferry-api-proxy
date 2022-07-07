@@ -8,3 +8,7 @@
     width: 500px;
     background-color: rgb(211, 211, 211);
 }
+
+#ferry-times {
+    column-count: 2;
+}
