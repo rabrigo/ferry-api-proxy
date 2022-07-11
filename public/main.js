@@ -1,9 +1,9 @@
 let rightNow = new Date();
-const month = rightNow.toLocaleString('en-US', { month: '2-digit' });
-const year = rightNow.getFullYear();
-const day = rightNow.toLocaleString('en-US', { day: '2-digit' });
-const dateParam = year + '-' + month + '-' + day;
-const currentDay = rightNow.toLocaleDateString('en-US', { weekday: 'long'});
+// const month = rightNow.toLocaleString('en-US', { month: '2-digit' });
+// const year = rightNow.getFullYear();
+// const day = rightNow.toLocaleString('en-US', { day: '2-digit' });
+// const currentDay = rightNow.toLocaleDateString('en-US', { weekday: 'long'});
+let dateParam;
 let departParam;
 let arrivalParam;
 
@@ -22,6 +22,7 @@ terminalsList.addEventListener('change', function() {
 // date picker
 const datePicker = document.getElementById('date-picker');
 datePicker.addEventListener('change', function() {
+    dateParam = this.value;
     console.log(this.value);
 });
 
@@ -63,7 +64,7 @@ function fetchFerries(departingID, arrivingID) {
     fetch(`/api/${dateParam}/${departingID}/${arrivingID}`)
     .then(response => response.json())
     .then(data => {
-        const message = `Departing from ${data.TerminalCombos[0].DepartingTerminalName}, arriving in ${data.TerminalCombos[0].ArrivingTerminalName} for ${currentDay}, ${month}/${day}/${year}`;
+        const message = `Departing from ${data.TerminalCombos[0].DepartingTerminalName}, arriving in ${data.TerminalCombos[0].ArrivingTerminalName} for ${dateParam}`;
         printDate(message);
         console.log(data);
         // console.log(data.TerminalCombos[0].Times);

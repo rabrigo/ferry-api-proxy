@@ -13,6 +13,10 @@
 <body>
     <section id="center-display">
         <h1 id="main-header">Scheduled ferry times</h1>
+        <form>
+            <label for="date-picker">Select a date:</label>
+            <input type="date" id="date-picker">
+        </form>
         <label for="terminals-list">Ferry schedule for: </label>
         <select name="terminals-list" id="terminals-list">
             <option selected disabled hidden>Please choose an option</option>
@@ -25,10 +29,6 @@
             <option value="7-4">Seattle to Bremerton</option>
             <option value="20-9">Southworth to Fauntleroy</option>
         </select>
-        <form>
-            <label for="date-picker">Select a date:</label>
-            <input type="date" id="date-picker">
-        </form>
         <h2 id="date-render"></h2>
         <ul id="ferry-times"></ul>
     </section>
