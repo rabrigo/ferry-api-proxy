@@ -1,12 +1,32 @@
-* {
-    font-family: 'Open Sans', sans-serif;;
+/* * {
+    font-family: 'Open Sans', sans-serif;
+    color: #F2F2F2;
+} */
+
+body {
+    background: #222559;
+    font-family: 'Open Sans', sans-serif;
+    color: #F2F2F2;
 }
+
+/* ::-webkit-datetime-edit-fields-wrapper { 
+    background: #222559; 
+}
+
+::-webkit-calendar-picker-indicator { 
+    background: #222559; 
+    color: #F2F2F2;
+}
+
+::-webkit-inner-spin-button { 
+    background: #222559; 
+} */
 
 #center-display {
     margin: 0 auto;
     height: 100%;
     width: 500px;
-    background-color: rgb(211, 211, 211);
+    /* background-color: rgb(211, 211, 211); */
 }
 
 #ferry-times {
