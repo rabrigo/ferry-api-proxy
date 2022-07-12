@@ -6,6 +6,8 @@ let rightNow = new Date();
 let dateParam;
 let departParam;
 let arrivalParam;
+let scheduleCount;
+const ferryTimes = document.getElementById('ferry-times');
 
 // console.log(`The current date is ${dateParam}`);
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
@@ -61,12 +63,13 @@ function renderSchedule(terminals) {
 }
 
 function fetchFerries(departingID, arrivingID) {
+    scheduleCount = 0;
     fetch(`/api/${dateParam}/${departingID}/${arrivingID}`)
     .then(response => response.json())
     .then(data => {
-        const message = `Departing from ${data.TerminalCombos[0].DepartingTerminalName}, arriving in ${data.TerminalCombos[0].ArrivingTerminalName} for ${dateParam}`;
+        const message = `${dateParam} \n${data.TerminalCombos[0].DepartingTerminalName} -> ${data.TerminalCombos[0].ArrivingTerminalName}`;
         printDate(message);
-        console.log(data);
+        // console.log(data);
         // console.log(data.TerminalCombos[0].Times);
         // reset #ferry-times
         document.getElementById('ferry-times').innerHTML = '';
@@ -78,6 +81,13 @@ function fetchFerries(departingID, arrivingID) {
             const ferryTime = unixString.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
             checkTime(unixString);
             addFerryTime(ferryTime);
+            scheduleCount++;
+        }
+        console.log(`scheduleCount is ${scheduleCount}`)
+        if (scheduleCount >= 12) {
+            ferryTimes.classList.add('col2')
+        } else {
+            ferryTimes.classList.remove('col2')
         }
     });
 }
@@ -87,11 +97,10 @@ function printDate(text) {
     // create tags in HTML and toggle hidden class on and off
     // instead of creating element every time
     const dateRender = document.getElementById('date-render');
-    dateRender.innerHTML = text;
+    dateRender.innerText = text;
 }
 
 function addFerryTime(time) {
-    const ferryTimes = document.getElementById('ferry-times');
     const newFerryTime = document.createElement('li');
     // if timePassed true then add class to make it strikethrough
     if (timePassed) {
@@ -105,7 +114,7 @@ function addFerryTime(time) {
 }
 
 function checkTime(schedTime) {
-    console.log(`schedTime.getHours(): ${schedTime.getHours()}`);
+    // console.log(`schedTime.getHours(): ${schedTime.getHours()}`);
     // console.log(`schedTime.getMinutes(): ${schedTime.getMinutes()}`);
     // console.log(`rightNow.getHours(): ${rightNow.getHours()}`);
     // console.log(`rightNowgetMinutes(): ${rightNow.getMinutes()}`);

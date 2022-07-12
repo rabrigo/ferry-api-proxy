@@ -9,6 +9,10 @@ body {
     color: #F2F2F2;
 }
 
+h2 {
+    font-size: 15pt;
+}
+
 /* ::-webkit-datetime-edit-fields-wrapper { 
     background: #222559; 
 }
@@ -29,6 +33,6 @@ body {
     /* background-color: rgb(211, 211, 211); */
 }
 
-#ferry-times {
+#col2 {
     column-count: 2;
 }

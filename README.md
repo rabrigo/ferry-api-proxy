@@ -17,6 +17,9 @@ Ferry Friend is an app that integrates WSDOT's API for ferry schedules into an i
 
 ## Updates
 
+07-11-22
+Added font and background colors.
+
 07-07-22
 Sailing times render in columns if the list gets long.
 
