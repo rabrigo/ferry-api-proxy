@@ -1,19 +1,23 @@
+// setting variables globally so functions have access
 let rightNow = new Date();
-// const month = rightNow.toLocaleString('en-US', { month: '2-digit' });
-// const year = rightNow.getFullYear();
-// const day = rightNow.toLocaleString('en-US', { day: '2-digit' });
-// const currentDay = rightNow.toLocaleDateString('en-US', { weekday: 'long'});
+
+// used for fetch request
 let dateParam;
 let departParam;
 let arrivalParam;
-let scheduleCount;
+
+// count for scheduled ferry sailings
+let timesCount;
+
+// for checkTime() and addFerryTime()
+let timePassed = false;
+
+// where ferry times are rendered
 const ferryTimes = document.getElementById('ferry-times');
 
+// to view the current date
 // console.log(`The current date is ${dateParam}`);
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
-
-// global variable to check if a scheduled sailing has passed
-let timePassed = false;
 
 // drop down selection
 const terminalsList = document.getElementById('terminals-list');
@@ -63,28 +67,30 @@ function renderSchedule(terminals) {
 }
 
 function fetchFerries(departingID, arrivingID) {
-    scheduleCount = 0;
+    timesCount = 0;
     fetch(`/api/${dateParam}/${departingID}/${arrivingID}`)
     .then(response => response.json())
     .then(data => {
+        // TODO: format dateParam into day of the week, MM-DD-YYYY
         const message = `${dateParam} \n${data.TerminalCombos[0].DepartingTerminalName} -> ${data.TerminalCombos[0].ArrivingTerminalName}`;
-        printDate(message);
+        renderDate(message);
         // console.log(data);
         // console.log(data.TerminalCombos[0].Times);
         // reset #ferry-times
-        document.getElementById('ferry-times').innerHTML = '';
+        ferryTimes.classList.remove('hidden');
+        ferryTimes.innerHTML = '';
         for (let i = 0; i < data.TerminalCombos[0].Times.length; i++) {
             const arrString = data.TerminalCombos[0].Times[i].DepartingTime;
             // console.log(arrString);
             const replString = arrString.replaceAll(/[^-0-9]+/g, '');
             const unixString = new Date(parseInt(replString));
-            const ferryTime = unixString.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            const sailingTime = unixString.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
             checkTime(unixString);
-            addFerryTime(ferryTime);
-            scheduleCount++;
+            addFerryTime(sailingTime);
+            timesCount++;
         }
-        console.log(`scheduleCount is ${scheduleCount}`)
-        if (scheduleCount >= 12) {
+        console.log(`timesCount is ${timesCount}`)
+        if (timesCount >= 12) {
             ferryTimes.classList.add('col2')
         } else {
             ferryTimes.classList.remove('col2')
@@ -92,11 +98,9 @@ function fetchFerries(departingID, arrivingID) {
     });
 }
 
-function printDate(text) {
-    // there's no insertAfter() function that I could find
-    // create tags in HTML and toggle hidden class on and off
-    // instead of creating element every time
+function renderDate(text) {
     const dateRender = document.getElementById('date-render');
+    dateRender.classList.remove('hidden');
     dateRender.innerText = text;
 }
 
