@@ -25,6 +25,7 @@ terminalsList.addEventListener('change', function() {
     renderSchedule(this.value);
 });
 
+// TODO: either have default date as today or modal pops up if no date selected
 // date picker
 const datePicker = document.getElementById('date-picker');
 datePicker.addEventListener('change', function() {
