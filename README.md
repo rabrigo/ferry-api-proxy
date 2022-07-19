@@ -13,6 +13,9 @@
 </details>
 
 ## Updates
+07-15-22
+Chris joins the team!
+
 07-14-22
 Made better names for variables and functions. Added a hidden class so #date-render and #ferry-times don't take up empty space.
 
