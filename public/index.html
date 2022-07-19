@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Ferry Friend</title>
 </head>
@@ -17,6 +18,7 @@
             <label for="date-picker">Select a date:</label>
             <input type="date" id="date-picker">
         </form>
+        <p>Date: <input type="text" id="datepicker"></p>
         <label for="terminals-list">Ferry schedule for: </label>
         <select name="terminals-list" id="terminals-list">
             <option selected disabled hidden>Please choose an option</option>
@@ -32,7 +34,8 @@
         <h2 id="date-render" class="hidden"></h2>
         <ul id="ferry-times" class="hidden"></ul>
     </section>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"   integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
