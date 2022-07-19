@@ -75,7 +75,7 @@ function fetchFerries(departingID, arrivingID) {
         // TODO: format dateParam into day of the week, MM-DD-YYYY
         const message = `${dateParam} \n${data.TerminalCombos[0].DepartingTerminalName} -> ${data.TerminalCombos[0].ArrivingTerminalName}`;
         renderDate(message);
-        // console.log(data);
+        console.log(data);
         // console.log(data.TerminalCombos[0].Times);
         // reset #ferry-times
         ferryTimes.classList.remove('hidden');
