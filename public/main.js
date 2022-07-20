@@ -25,13 +25,12 @@ terminalsList.addEventListener('change', function() {
     renderSchedule(this.value);
 });
 
-// TODO: either have default date as today or modal pops up if no date selected
-// date picker
-const datePicker = document.getElementById('date-picker');
-datePicker.addEventListener('change', function() {
-    dateParam = this.value;
-    console.log(this.value);
-});
+// HTML date picker
+// const datePicker = document.getElementById('date-picker');
+// datePicker.addEventListener('change', function() {
+//     dateParam = this.value;
+//     console.log(this.value);
+// });
 
 // $.datepicker.setDefaults({
 //     showOn: "both",
@@ -40,11 +39,13 @@ datePicker.addEventListener('change', function() {
 //     buttonText: "Calendar"
 //   });
 
-$("#datepicker").datepicker();
-$("#datepicker").change(function() {
-    console.log($("#datepicker").val())
+$("#datepicker").datepicker({
+    onSelect: function() {
+        dateParam = $(this).datepicker('getDate');
+        dateParam = $.datepicker.formatDate( "yy-mm-dd", dateParam)
+        console.log(dateParam);
+    }
 });
-
 
 // terminal ID's:
 // fetch(`/api/terminals/${dateParam}`)

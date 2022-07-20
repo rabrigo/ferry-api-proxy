@@ -1,30 +1,24 @@
 body {
-    background: #222559;
+    background: #37599B;
     font-family: 'Open Sans', sans-serif;
-    color: #F2F2F2;
+    color: #ffffff;
 }
 
 h2 {
     font-size: 15pt;
 }
 
-/* available date picker styling */
-
-/* ::-webkit-datetime-edit-fields-wrapper { 
-    background: #222559; 
-}
-
-::-webkit-calendar-picker-indicator { 
-    background: #222559; 
-    color: #F2F2F2;
-}
-
-::-webkit-inner-spin-button { 
-    background: #222559; 
-} */
-
 .col2 {
     column-count: 2;
+}
+
+#datepicker {
+    height: 20px;
+    width: 80px;
+    text-align: center;
+    background: none;
+    border: 1px solid white;
+    color: white;
 }
 
 .hidden {
