@@ -20,7 +20,7 @@ const ferryTimes = document.getElementById('ferry-times');
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
 
 // drop down selection
-const terminalsList = document.getElementById('terminals-list');
+const terminalsList = document.getElementById('routes-list');
 terminalsList.addEventListener('change', function() {
     renderSchedule(this.value);
 });
@@ -32,14 +32,7 @@ terminalsList.addEventListener('change', function() {
 //     console.log(this.value);
 // });
 
-// $.datepicker.setDefaults({
-//     showOn: "both",
-//     buttonImageOnly: true,
-//     buttonImage: "calendar.gif",
-//     buttonText: "Calendar"
-//   });
-
-$("#datepicker").datepicker({
+$("#date-picker").datepicker({
     onSelect: function() {
         dateParam = $(this).datepicker('getDate');
         dateParam = $.datepicker.formatDate( "yy-mm-dd", dateParam)
