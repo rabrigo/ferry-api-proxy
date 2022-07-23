@@ -12,6 +12,11 @@ h2 {
     column-count: 2;
 }
 
+.hidden {
+    display: none;
+}
+
+
 #date-picker, #routes-list {
     height: 30px;
     background: none;
@@ -26,10 +31,6 @@ h2 {
 
 #routes-list {
     width: 150px;
-}
-
-.hidden {
-    display: none;
 }
 
 #center-display {

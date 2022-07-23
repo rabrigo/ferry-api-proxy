@@ -40,6 +40,8 @@ $("#date-picker").datepicker({
     }
 });
 
+$("#menu").menu();
+
 // terminal ID's:
 // fetch(`/api/terminals/${dateParam}`)
 // .then(response => response.json())
