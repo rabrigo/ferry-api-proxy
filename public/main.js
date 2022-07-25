@@ -20,10 +20,10 @@ const ferryTimes = document.getElementById('ferry-times');
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
 
 // drop down selection
-const terminalsList = document.getElementById('routes-list');
-terminalsList.addEventListener('change', function() {
-    renderSchedule(this.value);
-});
+// const terminalsList = document.getElementById('routes-list');
+// terminalsList.addEventListener('change', function() {
+//     renderSchedule(this.value);
+// });
 
 // HTML date picker
 // const datePicker = document.getElementById('date-picker');
@@ -40,7 +40,7 @@ $("#date-picker").datepicker({
     }
 });
 
-$("#menu").menu();
+$("#routes-menu").selectmenu();
 
 // terminal ID's:
 // fetch(`/api/terminals/${dateParam}`)
