@@ -29,6 +29,10 @@ h2 {
     width: 80px;
 }
 
+textarea:focus, input:focus {
+    outline: none;
+}
+
 #routes-list {
     width: 150px;
 }
@@ -37,4 +41,20 @@ h2 {
     margin: 0 auto;
     height: 100%;
     width: 500px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid white;
+    background: #37599b;
+    font-weight: normal;
+    color: white;
+
+}
+
+.ui-widget-header {
+    background: #37599b;
+}
+
+.ui-widget-content {
+    background: none;
 }
