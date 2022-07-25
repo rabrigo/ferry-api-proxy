@@ -20,17 +20,27 @@ const ferryTimes = document.getElementById('ferry-times');
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
 
 // drop down selection
-const terminalsList = document.getElementById('terminals-list');
+const terminalsList = document.getElementById('routes-list');
 terminalsList.addEventListener('change', function() {
     renderSchedule(this.value);
 });
 
-// date picker
-const datePicker = document.getElementById('date-picker');
-datePicker.addEventListener('change', function() {
-    dateParam = this.value;
-    console.log(this.value);
+// HTML date picker
+// const datePicker = document.getElementById('date-picker');
+// datePicker.addEventListener('change', function() {
+//     dateParam = this.value;
+//     console.log(this.value);
+// });
+
+$("#date-picker").datepicker({
+    onSelect: function() {
+        dateParam = $(this).datepicker('getDate');
+        dateParam = $.datepicker.formatDate( "yy-mm-dd", dateParam)
+        console.log(dateParam);
+    }
 });
+
+$("#menu").menu();
 
 // terminal ID's:
 // fetch(`/api/terminals/${dateParam}`)
@@ -74,7 +84,7 @@ function fetchFerries(departingID, arrivingID) {
         // TODO: format dateParam into day of the week, MM-DD-YYYY
         const message = `${dateParam} \n${data.TerminalCombos[0].DepartingTerminalName} -> ${data.TerminalCombos[0].ArrivingTerminalName}`;
         renderDate(message);
-        // console.log(data);
+        console.log(data);
         // console.log(data.TerminalCombos[0].Times);
         // reset #ferry-times
         ferryTimes.classList.remove('hidden');
