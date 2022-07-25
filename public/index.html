@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Ferry Friend</title>
 </head>
@@ -19,7 +19,7 @@
             <input type="date" id="date-picker">
         </form> -->
         <p>Select a date: <input type="text" id="date-picker"></p>
-        <label for="routes-list">Ferry schedule for: </label>
+        <!-- <label for="routes-list">Ferry schedule for: </label>
         <select name="routes-list" id="routes-list">
             <option selected disabled hidden>Select a route</option>
             <option value="3-7">Bainbridge to Seattle</option>
@@ -30,11 +30,18 @@
             <option value="7-3">Seattle to Bainbridge</option>
             <option value="7-4">Seattle to Bremerton</option>
             <option value="20-9">Southworth to Fauntleroy</option>
+        </select> -->
+        <label for="routes-menu">Choose a route:</label>
+        <select name="routes-menu" id="routes-menu">
+            <option>Bainbridge to Seattle</option>
+            <option>Bremerton to Seattle</option>
+            <option>Edmonds to Kingston</option>
+            <option>Fauntleroy to Southworth</option>
+            <option>Kingston to Edmonds</option>
+            <option>Seattle to Bainbridge</option>
+            <option>Seattle to Bremerton</option>
+            <option>Southworth to Fauntleroy</option>
         </select>
-        <ul id="menu">
-            <li><div>item 1</div></li>
-            <li><div>item 2</div></li>
-        </ul>
         <h2 id="date-render" class="hidden"></h2>
         <ul id="ferry-times" class="hidden"></ul>
     </section>
