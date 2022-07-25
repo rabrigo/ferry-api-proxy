@@ -13,6 +13,9 @@
 </details>
 
 ## Updates
+07-25-22<br>
+Updated date picker colors.
+
 07-19-22<br>
 Added jQuery date picker for customization.
 
