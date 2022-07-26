@@ -33,6 +33,22 @@ textarea:focus, input:focus {
     outline: none;
 }
 
+/* .ui-checkboxradio-radio-label .ui-icon-background {
+	width: 16px;
+	height: 16px;
+	border-radius: 1em;
+	overflow: visible;
+	border: none;
+} */
+
+.ui-corner-all {
+    border-radius: 0;
+}
+
+.ui-button:focus, .ui-button:hover {
+    background: none;
+}
+
 #routes-list {
     width: 150px;
 }
