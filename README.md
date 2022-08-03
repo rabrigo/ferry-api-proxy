@@ -13,6 +13,9 @@
 </details>
 
 ## Updates
+08-03-22<br>
+Date picker and select menu has default text. Select menu passes value into fetch request. Date format changed.
+
 07-25-22<br>
 Updated date picker colors.
 

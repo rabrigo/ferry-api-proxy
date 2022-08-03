@@ -2,6 +2,7 @@
 let rightNow = new Date();
 
 // used for fetch request
+let dateVal;
 let dateParam;
 let departParam;
 let arrivalParam;
@@ -35,13 +36,17 @@ $("#date-picker").val($.datepicker.formatDate( "mm/dd/yy", rightNow));
 
 $("#date-picker").datepicker({
     onSelect: function() {
-        dateParam = $(this).datepicker('getDate');
-        dateParam = $.datepicker.formatDate( "yy-mm-dd", dateParam)
+        dateVal = $(this).datepicker('getDate');
+        dateParam = $.datepicker.formatDate( "yy-mm-dd", dateVal)
         console.log(dateParam);
     },
 });
 
 $("#routes-menu").selectmenu();
+$("#routes-menu").on('selectmenuchange', function() {
+    // console.log($("#routes-menu").val())
+    renderSchedule($("#routes-menu").val())
+});
 
 // terminal ID's:
 // fetch(`/api/terminals/${dateParam}`)
@@ -49,29 +54,30 @@ $("#routes-menu").selectmenu();
 // .then(data => console.log(data));
 
 function renderSchedule(terminals) {
+    console.log(terminals);
     switch(terminals) {
-        case '3-7':
+        case 'Bainbridge to Seattle':
             fetchFerries(3, 7);
             break;
-        case '4-7':
+        case 'Bremerton to Seattle':
             fetchFerries(4, 7);
             break;
-        case '8-12':
+        case 'Edmonds to Kingston':
             fetchFerries(8, 12);
             break;
-        case '9-20':
+        case 'Fauntleroy to Southworth':
             fetchFerries(9, 20);
             break;
-        case '12-8':
+        case 'Kingston to Edmonds':
             fetchFerries(12, 8);
             break;
-        case '7-3':
+        case 'Seattle to Bainbridge':
             fetchFerries(7, 3);
             break;
-        case '7-4':
+        case 'Seattle to Bremerton':
             fetchFerries(7, 4);
             break;
-        case '20-9':
+        case 'Southworth to Fauntleroy':
             fetchFerries(20, 9);
             break;
     }
@@ -83,6 +89,7 @@ function fetchFerries(departingID, arrivingID) {
     .then(response => response.json())
     .then(data => {
         // TODO: format dateParam into day of the week, MM-DD-YYYY
+        dateParam = dateVal.toLocaleDateString('en-us', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'});
         const message = `${dateParam} \n${data.TerminalCombos[0].DepartingTerminalName} -> ${data.TerminalCombos[0].ArrivingTerminalName}`;
         renderDate(message);
         console.log(data);
