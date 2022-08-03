@@ -32,13 +32,14 @@ const ferryTimes = document.getElementById('ferry-times');
 //     dateParam = this.value;
 //     console.log(this.value);
 // });
+$("#date-picker").val($.datepicker.formatDate( "mm/dd/yy", rightNow));
 
 $("#date-picker").datepicker({
     onSelect: function() {
         dateVal = $(this).datepicker('getDate');
         dateParam = $.datepicker.formatDate( "yy-mm-dd", dateVal)
         console.log(dateParam);
-    }
+    },
 });
 
 $("#routes-menu").selectmenu();
