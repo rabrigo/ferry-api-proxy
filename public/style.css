@@ -2,7 +2,7 @@
     background: #37599B;
     font-family: 'Open Sans', sans-serif;
     color: #ffffff;
-}
+} 
 
 h2 {
     font-size: 15pt;
@@ -17,7 +17,7 @@ h2 {
 }
 
 
-#date-picker, #routes-list {
+#date-picker, #routes-menu {
     height: 30px;
     background: none;
     border: 1px solid white;
@@ -49,14 +49,18 @@ textarea:focus, input:focus {
     background: none;
 }
 
-#routes-list {
-    width: 150px;
+#routes-menu {
+    width: 200px;
 }
 
 #center-display {
     margin: 0 auto;
     height: 100%;
     width: 500px;
+}
+
+#ferry-friend-logo {
+    width: 100%;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {

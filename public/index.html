@@ -13,11 +13,11 @@
 </head>
 <body>
     <section id="center-display">
-        <h1 id="main-header">Ferry Friend</h1>
         <!-- <form>
             <label for="date-picker">Select a date:</label>
             <input type="date" id="date-picker">
         </form> -->
+        <p>Disclaimer: This app is in development and is not associated with the Washington state Department of Transportation. Please use <a href>https://wsdot.com/ferries/schedule/default.aspx</a> for actual use.</p>
         <p>Select a date: <input type="text" id="date-picker" ></p>
         <!-- <label for="routes-list">Ferry schedule for: </label>
         <select name="routes-list" id="routes-list">
@@ -43,6 +43,8 @@
             <option>Seattle to Bremerton</option>
             <option>Southworth to Fauntleroy</option>
         </select>
+        <h1 id="main-header" class="hidden">Ferry Friend</h1>
+        <img id="ferry-friend-logo" src="images/ferry-friend.png" class="hidden">
         <h2 id="date-render" class="hidden"></h2>
         <ul id="ferry-times" class="hidden"></ul>
     </section>
