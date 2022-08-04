@@ -13,6 +13,9 @@
 </details>
 
 ## Updates
+08-04-22<br>
+Date default set to today. Header text and logo added with hidden class on page load.
+
 08-03-22<br>
 Date picker and select menu has default text. Select menu passes value into fetch request. Date format changed.
 

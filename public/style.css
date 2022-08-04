@@ -17,7 +17,7 @@ h2 {
 }
 
 
-#date-picker, #routes-list {
+#date-picker, #routes-menu {
     height: 30px;
     background: none;
     border: 1px solid white;
@@ -49,8 +49,8 @@ textarea:focus, input:focus {
     background: none;
 }
 
-#routes-list {
-    width: 150px;
+#routes-menu {
+    width: 200px;
 }
 
 #center-display {
