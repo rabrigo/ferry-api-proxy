@@ -2,8 +2,8 @@
 let rightNow = new Date();
 
 // used for fetch request
-let dateVal;
-let dateParam;
+let dateVal = new Date();
+let dateParam = $.datepicker.formatDate( "yy-mm-dd", dateVal);
 let departParam;
 let arrivalParam;
 
@@ -17,7 +17,7 @@ let timePassed = false;
 const ferryTimes = document.getElementById('ferry-times');
 
 // to view the current date
-// console.log(`The current date is ${dateParam}`);
+console.log(`The current date is ${dateVal}`);
 // console.log(`The time is ${rightNow.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`);
 
 // drop down selection
@@ -88,7 +88,6 @@ function fetchFerries(departingID, arrivingID) {
     fetch(`/api/${dateParam}/${departingID}/${arrivingID}`)
     .then(response => response.json())
     .then(data => {
-        // TODO: format dateParam into day of the week, MM-DD-YYYY
         dateParam = dateVal.toLocaleDateString('en-us', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'});
         const message = `${dateParam} \n${data.TerminalCombos[0].DepartingTerminalName} -> ${data.TerminalCombos[0].ArrivingTerminalName}`;
         renderDate(message);
@@ -97,6 +96,8 @@ function fetchFerries(departingID, arrivingID) {
         // reset #ferry-times
         ferryTimes.classList.remove('hidden');
         ferryTimes.innerHTML = '';
+        $("#main-header").removeClass('hidden');
+        $("#ferry-friend-logo").removeClass('hidden');
         for (let i = 0; i < data.TerminalCombos[0].Times.length; i++) {
             const arrString = data.TerminalCombos[0].Times[i].DepartingTime;
             // console.log(arrString);
