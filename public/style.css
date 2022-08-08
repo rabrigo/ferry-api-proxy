@@ -1,10 +1,11 @@
 * {
-    background: var(--background);
-    font-family: 'Open Sans', sans-serif;
-    color: var(--text);
     --text: #ffffff;
     --background: #37599B;
     --highlight: #F2A541;
+    background: var(--background);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+
 } 
 
 h2 {
@@ -19,6 +20,17 @@ h2 {
     display: none;
 }
 
+#date-and-route {
+    height: 400px;
+    width: 240px;
+    position: absolute;
+    left: 50px;
+    top: 200px;
+}
+
+#disclaimer {
+    font-size: 8pt;
+}
 
 #date-picker, #routes-menu {
     height: 30px;
@@ -51,14 +63,6 @@ textarea:focus, input:focus {
     outline: none;
 }
 
-/* .ui-checkboxradio-radio-label .ui-icon-background {
-	width: 16px;
-	height: 16px;
-	border-radius: 1em;
-	overflow: visible;
-	border: none;
-} */
-
 .ui-corner-all {
     border-radius: 0;
 }
@@ -86,7 +90,6 @@ textarea:focus, input:focus {
     background: var(--background);
     font-weight: normal;
     color: var(--text);
-
 }
 
 .ui-widget-header {

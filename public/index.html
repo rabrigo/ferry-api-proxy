@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,38 +12,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Ferry Friend</title>
 </head>
+
 <body>
     <section id="center-display">
-        <!-- <form>
-            <label for="date-picker">Select a date:</label>
-            <input type="date" id="date-picker">
-        </form> -->
-        <p>Disclaimer: This app is in development and is not associated with the Washington state Department of Transportation. Please use <a href>https://wsdot.com/ferries/schedule/default.aspx</a> for actual use.</p>
-        <p id="selectadate">Select a date:</p> <input type="text" id="date-picker" >
-        <!-- <label for="routes-list">Ferry schedule for: </label>
-        <select name="routes-list" id="routes-list">
-            <option selected disabled hidden>Select a route</option>
-            <option value="3-7">Bainbridge to Seattle</option>
-            <option value="4-7">Bremerton to Seattle</option>
-            <option value="8-12">Edmonds to Kingston</option>
-            <option value="9-20">Fauntleroy to Southworth</option>
-            <option value="12-8">Kingston to Edmonds</option>
-            <option value="7-3">Seattle to Bainbridge</option>
-            <option value="7-4">Seattle to Bremerton</option>
-            <option value="20-9">Southworth to Fauntleroy</option>
-        </select> -->
-        <label for="routes-menu" id="choosearoute">Choose a route:</label>
-        <select name="routes-menu" id="routes-menu">
-            <option disabled selected hidden>Please choose a route</option>
-            <option>Bainbridge to Seattle</option>
-            <option>Bremerton to Seattle</option>
-            <option>Edmonds to Kingston</option>
-            <option>Fauntleroy to Southworth</option>
-            <option>Kingston to Edmonds</option>
-            <option>Seattle to Bainbridge</option>
-            <option>Seattle to Bremerton</option>
-            <option>Southworth to Fauntleroy</option>
-        </select>
+        <section id="date-and-route">
+            <p id="disclaimer">Disclaimer: This app is in development and is not associated with the Washington state Department of
+                Transportation. Please use: <a href>https://wsdot.com/ferries/schedule/default.aspx</a>
+            </p>
+            <p id="selectadate">Select a date:</p> <input type="text" id="date-picker">
+            <label for="routes-menu" id="choosearoute">Choose a route:</label>
+            <select name="routes-menu" id="routes-menu">
+                <option disabled selected hidden>Please choose a route</option>
+                <option>Bainbridge to Seattle</option>
+                <option>Bremerton to Seattle</option>
+                <option>Edmonds to Kingston</option>
+                <option>Fauntleroy to Southworth</option>
+                <option>Kingston to Edmonds</option>
+                <option>Seattle to Bainbridge</option>
+                <option>Seattle to Bremerton</option>
+                <option>Southworth to Fauntleroy</option>
+            </select>
+        </section>
+
         <h1 id="main-header" class="hidden">Ferry Friend</h1>
         <img id="ferry-friend-logo" src="images/ferry-friend.png" class="hidden">
         <h2 id="date-render" class="hidden"></h2>
@@ -52,4 +43,5 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./main.js"></script>
 </body>
+
 </html>

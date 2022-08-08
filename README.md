@@ -13,6 +13,9 @@
 </details>
 
 ## Updates
+08-08-22<br>
+Disclaimer and date & route pickers moved to the left.
+
 08-04-22<br>
 Date default set to today. Header text and logo added with hidden class on page load.
 
