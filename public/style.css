@@ -42,16 +42,18 @@ h2 {
 
 #selectadate {
     display:inline-block;
+    width: 100px;
 }
 
 #choosearoute {
     display: block;
+    width: 120px;
 }
 
 #date-picker {
     width: 80px;
     display: inline-block;
-    margin-right: 0;
+    margin-left: 7px;
 }
 
 #routes-menu-button {
