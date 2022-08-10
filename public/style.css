@@ -20,6 +20,34 @@ h2 {
     display: none;
 }
 
+.ui-corner-all {
+    border-radius: 0;
+}
+
+.ui-button:focus, .ui-button:hover {
+    background: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid white;
+    background: var(--background);
+    font-weight: normal;
+    color: var(--text);
+}
+
+.uicorner-bottom {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ui-widget-header {
+    background: var(--background);
+}
+
+.ui-widget-content {
+    background: none;
+}
+
 #date-and-route {
     height: 400px;
     width: 240px;
@@ -63,14 +91,6 @@ textarea:focus, input:focus {
     outline: none;
 }
 
-.ui-corner-all {
-    border-radius: 0;
-}
-
-.ui-button:focus, .ui-button:hover {
-    background: none;
-}
-
 #routes-menu {
     width: 200px;
 }
@@ -83,19 +103,4 @@ textarea:focus, input:focus {
 
 #ferry-friend-logo {
     width: 100%;
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-    border: 1px solid white;
-    background: var(--background);
-    font-weight: normal;
-    color: var(--text);
-}
-
-.ui-widget-header {
-    background: var(--background);
-}
-
-.ui-widget-content {
-    background: none;
 }
