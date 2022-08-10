@@ -16,22 +16,38 @@
 <body>
     <section id="center-display">
         <section id="date-and-route">
-            <p id="disclaimer">Disclaimer: This app is in development and is not associated with the Washington state Department of
+            <p id="disclaimer">Disclaimer: This app is in development and is not associated with the Washington state
+                Department of
                 Transportation. Please use: <a href>https://wsdot.com/ferries/schedule/default.aspx</a>
             </p>
-            <p id="selectadate">Select a date:</p> <input type="text" id="date-picker">
-            <label for="routes-menu" id="choosearoute">Choose a route:</label>
-            <select name="routes-menu" id="routes-menu">
-                <option disabled selected hidden>Please choose a route</option>
-                <option>Bainbridge to Seattle</option>
-                <option>Bremerton to Seattle</option>
-                <option>Edmonds to Kingston</option>
-                <option>Fauntleroy to Southworth</option>
-                <option>Kingston to Edmonds</option>
-                <option>Seattle to Bainbridge</option>
-                <option>Seattle to Bremerton</option>
-                <option>Southworth to Fauntleroy</option>
-            </select>
+            <table>
+                <tr>
+                    <td id="selecttd">
+                        <p id="selectadate">Select a date:</p>
+                    </td>
+                    <td>
+                        <input type="text" id="date-picker">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="routes-menu" id="choosearoute">Choose a route:</label>
+                    </td>
+                    <td>
+                        <select name="routes-menu" id="routes-menu">
+                            <option disabled selected hidden>Please choose a route</option>
+                            <option>Bainbridge to Seattle</option>
+                            <option>Bremerton to Seattle</option>
+                            <option>Edmonds to Kingston</option>
+                            <option>Fauntleroy to Southworth</option>
+                            <option>Kingston to Edmonds</option>
+                            <option>Seattle to Bainbridge</option>
+                            <option>Seattle to Bremerton</option>
+                            <option>Southworth to Fauntleroy</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
         </section>
 
         <h1 id="main-header" class="hidden">Ferry Friend</h1>
