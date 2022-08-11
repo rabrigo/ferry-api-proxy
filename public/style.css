@@ -1,12 +1,16 @@
-* {
+
+body {
     --text: #ffffff;
     --background: #37599B;
     --highlight: #F2A541;
     background: var(--background);
     font-family: 'Open Sans', sans-serif;
     color: var(--text);
-
 } 
+
+a {
+    color: var(--highlight);
+}
 
 h2 {
     font-size: 15pt;
@@ -20,12 +24,61 @@ h2 {
     display: none;
 }
 
+.ui-corner-all {
+    border-radius: 0;
+}
+
+.ui-widget-header {
+    color: var(--text);
+}
+
+.ui-datepicker-prev {
+    color: var(--text);
+}
+
+.ui-button:focus, .ui-button:hover {
+    color: var(--highlight);
+    border-color: var(--highlight);
+    background: none;
+    border-radius: 0;
+}
+
+.ui-front {
+    color: var(--highlight);
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid white;
+    background: var(--background);
+    font-weight: normal;
+    color: var(--highlight);
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid white;
+    color: var(--text);
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ui-widget-header {
+    background: var(--background);
+}
+
+.ui-widget-content {
+    background: var(--background);
+}
+
 #date-and-route {
     height: 400px;
     width: 240px;
     position: absolute;
     left: 50px;
     top: 200px;
+    background: var(--background);
 }
 
 #disclaimer {
@@ -36,8 +89,9 @@ h2 {
     height: 30px;
     background: none;
     border: 1px solid white;
-    color: var(--text);
+    color: var(--highlight);
     text-align: center;
+    font-weight: bold;
 }
 
 #selectadate {
@@ -65,12 +119,8 @@ textarea:focus, input:focus {
     outline: none;
 }
 
-.ui-corner-all {
-    border-radius: 0;
-}
-
-.ui-button:focus, .ui-button:hover {
-    background: none;
+#ferry-times {
+    list-style-type: none;
 }
 
 #routes-menu {
@@ -85,19 +135,4 @@ textarea:focus, input:focus {
 
 #ferry-friend-logo {
     width: 100%;
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-    border: 1px solid white;
-    background: var(--background);
-    font-weight: normal;
-    color: var(--text);
-}
-
-.ui-widget-header {
-    background: var(--background);
-}
-
-.ui-widget-content {
-    background: none;
 }

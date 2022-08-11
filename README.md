@@ -13,6 +13,12 @@
 </details>
 
 ## Updates
+08-11-22<br>
+Changed borders and color of text for date and route picker. Removed bullets on ferry times.
+
+08-09-22<br>
+Date and route picker aligned to the right of text.
+
 08-08-22<br>
 Disclaimer and date & route pickers moved to the left.
 
