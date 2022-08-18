@@ -136,3 +136,17 @@ textarea:focus, input:focus {
 #ferry-friend-logo {
     width: 100%;
 }
+
+@media screen and (max-width: 1388px) {
+    #date-and-route {
+        height: 200px;
+        width: 240px;
+        position: static;
+        left: 50px;
+        top: 200px;
+        background: var(--background);
+    }
+    #ferry-friend-logo {
+        width: 75%;
+    }
+}

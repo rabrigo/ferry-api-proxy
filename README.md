@@ -13,6 +13,9 @@
 </details>
 
 ## Updates
+08-18-22<br>
+Added media queries to widget and logo.
+
 08-11-22<br>
 Changed borders and color of text for date and route picker. Removed bullets on ferry times.
 
