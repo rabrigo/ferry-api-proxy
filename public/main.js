@@ -102,6 +102,7 @@ function fetchFerries(departingID, arrivingID) {
             const arrString = data.TerminalCombos[0].Times[i].DepartingTime;
             // console.log(arrString);
             const replString = arrString.replaceAll(/[^-0-9]+/g, '');
+            console.log('replString: ' + replString);
             const unixString = new Date(parseInt(replString));
             const sailingTime = unixString.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
             checkTime(unixString);
